@@ -44,11 +44,12 @@
 
 #### GitHub
 
-* [__GitHub Training & Guides__](https://www.youtube.com/githubguides) YouTube channel for all sorts of training playlists and videos
-* [__GitHub Learning Lab__](https://lab.github.com) hands-on tutorials put together by GitHub
-* [__Understanding the GitHub flow__](https://guides.github.com/introduction/flow/) is a 5-minute tutorial to understand the basics of team collaboration through GitHub
-* [__GitHub Help__](https://help.github.com/) is a great place to start at the source
+* [__GitHub Training & Guides__](https://www.youtube.com/githubguides) YouTube channel: for all sorts of training playlists and videos
+* [__GitHub Learning Lab__](https://lab.github.com): hands-on tutorials put together by GitHub
+* [__Understanding the GitHub flow__](https://guides.github.com/introduction/flow/): 5-minute tutorial to understand the basics of team collaboration through GitHub
+* [__GitHub Help__](https://help.github.com/): a great place to start at the source
 
 #### RStudio
 
-* [__Happy Git and GitHub for the useR__](https://happygitwithr.com) tutorial to seamlessly integrate git and GitHub to RStudio
+* [__Happy Git and GitHub for the useR__](https://happygitwithr.com): tutorial to seamlessly integrate git and GitHub to RStudio
+* [__Git and Github__](https://r-pkgs.org/git.html): a chapter-length treatment of best practices, workflow and pro tips for working with git and GitHub from RStudio (from the on [R Packages](https://r-pkgs.org) book)
