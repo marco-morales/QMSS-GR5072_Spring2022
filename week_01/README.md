@@ -1,4 +1,4 @@
-## Week 1: Introduction
+## Week 1: Introduction to R
 
 ### Before our first class...
 
