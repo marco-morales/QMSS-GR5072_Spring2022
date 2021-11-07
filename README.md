@@ -35,7 +35,7 @@ outline\
 | -- week  1 : Introduction to R
 | -- week  2 : git, GitHub and R Markdown
 | -- week  3 : the tidyverse
-| -- week  4 : Functions I: their logic
+| -- week  4 : Functions I: their structure and logic
 | -- week  5 : Functions II: nested and complex operations
 | -- week  6 : Functions III: write your own package
 | -- week  7 : Functions IV: strings and dates
