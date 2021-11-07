@@ -18,6 +18,9 @@
 * [__Compiling reports from R scripts__](https://rmarkdown.rstudio.com/articles_report_from_r_script.html)
 * [__Automating uploading/emailing of R Markdown reports__](http://www.analyticsforfun.com/2016/01/scheduling-r-markdown-reports-via-email.html)
 
+<br>
+
+---
 
 ### Complementary Resources
 
@@ -52,4 +55,4 @@
 #### RStudio
 
 * [__Happy Git and GitHub for the useR__](https://happygitwithr.com): tutorial to seamlessly integrate git and GitHub to RStudio
-* [__Git and Github__](https://r-pkgs.org/git.html): a chapter-length treatment of best practices, workflow and pro tips for working with git and GitHub from RStudio (from the on [R Packages](https://r-pkgs.org) book)
+* [__Git and Github__](https://r-pkgs.org/git.html): a chapter-length treatment (from the [R Packages](https://r-pkgs.org) book) of best practices, workflow and pro tips for working with git and GitHub from RStudio
