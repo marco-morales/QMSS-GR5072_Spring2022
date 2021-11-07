@@ -17,21 +17,36 @@ The course will primarily use the [__R__](https://www.r-project.org) language fo
 
 ### Resources
 
-* __Textbooks:__ While there are no required textbooks for this course, you will find these to be very useful in addition to the lectures and course readings:
+* __Textbooks:__ While there are no required textbooks for this course, you will find these (online) books to be very useful in addition to the lectures and course readings:
 
-	* Hadley Wickham & Garret Grolemund. [__R for Data Science__](https://r4ds.had.co.nz). O’Reilly Media, Boston, MA, 2017
+	* Hadley Wickham & Garret Grolemund. [__R for Data Science__](https://r4ds.had.co.nz). O’Reilly Media, Boston, MA, 2016
 	* Hadley Wickham. [__Advanced R__](https://adv-r.hadley.nz) (Second Edition). Taylor & Francis Group, Boca Raton, FL, 2019
-	* Hadley Wickham & Jenny Bryan. [__R Packages__](https://r-pkgs.org) (Second Edition). O’Reilly Media, Boston, MA, 2015
+	* Hadley Wickham & Jenny Bryan. [__R Packages__](https://r-pkgs.org) (Second Edition). O’Reilly Media, Boston, MA, 2022
 	* Collin Gillespie & Robin Lovelace. [__Efficient R Programming__](https://csgillespie.github.io/efficientR/). O’Reilly Media, Boston, MA, 2016
 
-* __Software:__ The course will rely heavily on [__R__](https://www.r-project.org), [__RStudio__](https://www.rstudio.com/products/rstudio/download/), and [__git__](https://git-scm.com/downloads). Please install them by our first class.
+* __Software:__ The course will rely heavily on [__R__](https://www.r-project.org), [__RStudio__](https://www.rstudio.com/products/rstudio/download/), and [__git__](https://git-scm.com/downloads). Please install them before our first class.
 
-* __Cloud Services:__ Sign up for a [__GitHub__](https://github.com) account if you don't already have one. Homeworks will be submitted through the [__GitHub classroom__](https://classroom.github.com/classrooms/93681325-qmss-gr5072-modern-data-structures-spring-2022-classroom) for this course. __AWS Educate__ and __Databricks Community__ classrooms will be available to train you to leverage data at scale.
+* __Cloud Services:__ Homeworks will be submitted through the [__GitHub classroom__](https://classroom.github.com/classrooms/93681325-qmss-gr5072-modern-data-structures-spring-2022-classroom) for this course. Sign up for a [__GitHub__](https://github.com) account if you don't already have one. __AWS Educate__ and __Databricks Community__ classrooms will be available to train you to leverage data at scale.  
 
 ### Course Roadmap
 
 ```
-[COMING SOON]
+outline\
+| -- week  1 : Introduction to R
+| -- week  2 : git, GitHub and R Markdown
+| -- week  3 : the tidyverse
+| -- week  4 : Functions I: their logic
+| -- week  5 : Functions II: nested and complex operations
+| -- week  6 : Functions III: write your own package
+| -- week  7 : Functions IV: strings and dates
+| -- week  8 : -- ACADEMIC HOLIDAY --
+| -- week  9 : working with APIs
+| -- week 10 : working with JSON & XML
+| -- week 11 : web scraping
+| -- week 12 : working with SQL
+| -- week 13 : working in the cloud
+| -- week 14 : distributed data processing
+| -- week 14 : tbd
 ```
 
 ### Accessing course materials in this repo
@@ -56,7 +71,7 @@ The course will primarily use the [__R__](https://www.r-project.org) language fo
 	$ git pull origin main
 	```
 
-5. subscribe to the repository to get notifications each time new changes are pushed to the repository
+5. "Watch" the repository to get notifications each time uptates are pushed
 
 
 
