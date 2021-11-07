@@ -1,4 +1,4 @@
-## Week 2: Intro to R Markdown & git/GitHub
+## Week 2: git, GitHub & R Markdown 
 
 ### Before class...
 
