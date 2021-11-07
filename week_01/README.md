@@ -5,7 +5,11 @@
 There are a few **mandatory** things to be prepared for our first class:
 
 1. Install [__R__](https://cran.r-project.org) and [__RStudio__](https://www.rstudio.com/products/rstudio/download/) on your computer.   
-2. Read through [__R-Tutorial__](http://www.r-tutor.com/r-introduction) - each subsection in R Introduction including [Basic Data Types](http://www.r-tutor.com/r-introduction/basic-data-types), [Vector](http://www.r-tutor.com/r-introduction/vector), [Matrix](http://www.r-tutor.com/r-introduction/matrix), [List](http://www.r-tutor.com/r-introduction/list), and [Data Frame](http://www.r-tutor.com/r-introduction/data-frame)
+2. Read through each subsection in [__R-Tutorial__](http://www.r-tutor.com/r-introduction) Introduction:  [Basic Data Types](http://www.r-tutor.com/r-introduction/basic-data-types), [Vector](http://www.r-tutor.com/r-introduction/vector), [Matrix](http://www.r-tutor.com/r-introduction/matrix), [List](http://www.r-tutor.com/r-introduction/list), and [Data Frame](http://www.r-tutor.com/r-introduction/data-frame)
+
+<br>
+
+---
 
 ### Complementary Resources
 
