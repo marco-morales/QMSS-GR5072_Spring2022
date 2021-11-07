@@ -1,4 +1,4 @@
-## Week 3: Basics of the `tidyverse`
+## Week 3: the `tidyverse`
 
 ### Before class...
 
@@ -6,10 +6,15 @@
 	* [__Why is R Hard to Learn__](http://r4stats.com/articles/why-r-is-hard-to-learn/)
 	* Chapters 9-12 in [__R for Data Science__](https://r4ds.had.co.nz) ([Introduction](https://r4ds.had.co.nz/wrangle-intro.html), [Tibbles](https://r4ds.had.co.nz/tibbles.html), [Data Import](https://r4ds.had.co.nz/data-import.html),  [Tidy Data](https://r4ds.had.co.nz/tidy-data.html))
 
+<!--
 #### Advanced topics (to explore on your own)
 
 * [__Text Mining with R: a Tidy Approach__](https://www.tidytextmining.com) text as data, the `tidyverse` way
+-->
 
+<br>
+
+---
 
 ### Complementary Resources
 
