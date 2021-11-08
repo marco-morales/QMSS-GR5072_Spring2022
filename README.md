@@ -75,4 +75,4 @@ outline\
 
 
 
-__Acknowledgements__: Materials in this repository derive from previous iterations of this course taught by Mike Parrot, Thomas Brambor and Greg Eirich.
+__Acknowledgements__: Materials in this repository derive from previous iterations of this course taught by [**Mike Parrot**](https://github.com/mikedparrott), [**Thomas Brambor**](https://github.com/tbrambor) and Greg Eirich.
