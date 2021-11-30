@@ -37,7 +37,7 @@ outline\
 | -- week  3 : the tidyverse
 | -- week  4 : Functions I: their structure and logic
 | -- week  5 : Functions II: nested and complex operations
-| -- week  6 : Functions III: write your own package
+| -- week  6 : Functions III: write your own R package
 | -- week  7 : Functions IV: strings and dates
 | -- week  8 : -- ACADEMIC HOLIDAY --
 | -- week  9 : working with APIs
