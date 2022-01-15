@@ -5,7 +5,8 @@
 __Instructor:__ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [__Marco Morales__](mailto:marco.morales@columbia.edu), Columbia University
 
 
-__TA:__ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__TBD__](mailto:tbd@columbia.edu), Columbia University
+__TAs:__ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Yingzhi Zhang__](mailto:yz3988@columbia.edu), Columbia University\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[__Parth Gupta__](mailto:pg2677@columbia.edu), Columbia University
 <br/>
 
 
@@ -56,7 +57,7 @@ outline\
 2. from the command line, go to the directory where you want to clone this repo
 
 	```
-	$ cd <dir>
+	$ cd <your chosen directory>
 	```
 
 3. `clone` this repository to get a local copy in your machine
