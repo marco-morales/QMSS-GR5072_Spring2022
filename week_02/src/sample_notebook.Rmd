@@ -1,0 +1,135 @@
+---
+title: "this is a sample RMarkdown notebook that creates a GitHub-flavored `.md` file"
+author: "Marco Morales"
+date: "Jan 20, 2022"
+md_document:
+    variant: markdown_github
+
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is a sample `Rmd` document that will generate a GitHub flavored `.md`. That means it can be properly rendered in GitHub and you will not lose features once you `push` it. These notebooks contain both your code and its outputs, as well as additional comments you'd want to add.   
+
+
+## Document header
+
+The document header is automatically generated when the RMarkdown file is created. It looks like this:
+
+```
+---
+title: "this is a sample RMarkdown notebook that creates a GitHub-flavored `.md` file"
+author: "Marco Morales"
+date: "Jan 20, 2022"
+md_document:
+    variant: markdown_github
+---
+```
+
+Use ``md_document`` followed by ``variant: markdown_github`` to generate your document as GitHub-flavored `.md` file.
+
+## Generating your `.md` document
+
+Click the "Knit" icon with the ball of yarn in the toolbar. Assuming your code does not have errors, this will save your output document in your working directory and a preview will pop up.
+
+## Formatting/organizing your document
+
+You can use Markdown as usual, e.g. "#" for section headers. See the reference guide above for more commands.
+
+## Code chunks
+
+A code chunk is surrounded by three pairs of backticks. In every chunk, you should provide ``{r unique_chunk_name, [additional options]}``.
+
+
+
+This is the same code shown as above, but as an actual chunk that is run, with both code/output shown.
+
+```{r example, echo =TRUE}
+# Example code chunk
+
+summary(cars)
+```
+
+The options (`echo`, `eval`, etc.) allow you to show/hide/run the code/output. Click the gear in the top right corner of the code chunk to choose between them, and the appropriate chunk options will automatically be updated.
+
+### echo
+
+For example, the following chunk is the same as above, except it uses `echo = FALSE` to only show the output, not the code. (_In general, for HW assignments, you must show both code and output to receive credit._)
+
+```{r noecho, echo = FALSE}
+# This code will not appear, but the output will appear
+summary(cars)
+```
+
+### eval
+
+Use `eval = FALSE` to not run the code.
+
+```{r syntaxerror, eval = FALSE, echo = TRUE}
+# This code will appear exactly as shown below. 
+# There is a syntax error, but since the code is not evaluated, 
+# the document knits without problems.
+summary(cars
+```
+
+
+
+
+
+
+
+
+## For your homework
+
+Start by loading all necessary packages
+
+```{r message = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(dotwhisker)
+library(here)
+```
+
+
+## Data Exploration
+
+Show both your code and its outputs.  
+
+```{r display}
+# display the first rows of your data.frame
+head(cars)
+```
+## Models
+
+You can also fir models
+
+```{r models}
+summary(
+  model_fit <- lm(
+    Sepal.Length ~.,
+    data = iris)
+)
+```
+
+## Data Plotting 
+
+You can also embed plots, for example:
+
+```{r coefficient_plot, fig.align = 'center'}
+dwplot(list(model_fit))
+```
+
+
+# Why doesn't my code work? (thanks Leslie Huang!)
+
+- If there are errors in your code, your RMarkdown document will not compile. In the top right corner, the options under "Run" will allow you to run sections of chunks to debug.
+
+- Code must be in your RMarkdown document to run when the document is generated. If code is run only in the console during your work session, it will not be included. For example, make sure all library imports are in the RMarkdown document.
+
+- Using duplicate names for code chunks causes errors.
+
+- Stray backtick symbols in your document will interfere with the chunks.
+
+
