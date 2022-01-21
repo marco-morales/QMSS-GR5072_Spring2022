@@ -1,10 +1,11 @@
-## Week 2: git, GitHub & R Markdown 
+## Week 2: git, GitHub & R Markdown
 
 ### Before class...
 
-1. install [__git__](https://git-scm.com/downloads) in your local machine
-2. sign up for a [__GitHub__](https://github.com) account, if you don't already have one (and send your handle to your TA by Slack DM)
-3. read:
+1. join the course's Slack workspace. (you'll receive an invite on your Columbia email)
+2. install [__git__](https://git-scm.com/downloads) in your local machine
+3. sign up for a [__GitHub__](https://github.com) account, if you don't already have one add your handle on the Google sheet we've set up for that purpose
+4. read:
 	* [__R Markdown__]()  - read the first 10 sections from [Introduction](https://rmarkdown.rstudio.com/lesson-1.html) through [Notebooks](https://rmarkdown.rstudio.com/lesson-10.html)
 	* [__An Intro to Git and GitHub for Beginners__](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners) (read all)
 	* [__Hello World - GitHub for the non-programming beginner__](https://guides.github.com/activities/hello-world/) (read all)
