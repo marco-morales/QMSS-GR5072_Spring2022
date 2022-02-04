@@ -53,6 +53,14 @@
 * [__Understanding the GitHub flow__](https://guides.github.com/introduction/flow/): 5-minute tutorial to understand the basics of team collaboration through GitHub
 * [__GitHub Help__](https://help.github.com/): a great place to start at the source
 
+**PLEASE NOTE** that GitHub now requires a **personal access token** for authentication, instead of a password. When interacting with GitHub from the command line, you may get the following message:
+
+```
+Support for password authentication was removed on August 13, 2021. Please use personal access token instead.
+```
+
+To solve this issue, follow these [**instructions**](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create your personal token and use it instead of a password. Make sure to set the expiration date for the duration of the course.
+
 #### RStudio
 
 * [__Happy Git and GitHub for the useR__](https://happygitwithr.com): tutorial to seamlessly integrate git and GitHub to RStudio
