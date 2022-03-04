@@ -21,6 +21,7 @@
 
 ### Complementary Resources
 
-* the `stringr` package [documentation page](https://stringr.tidyverse.org)
+* the `stringr` package [documentation page](https://stringr.tidyverse.org), including a soft introduction to [Regular Expressions](https://stringr.tidyverse.org/articles/regular-expressions.html)
 * the `lubridate` package [documentation page](https://lubridate.tidyverse.org)
 * [**Handling and Processing Strings in R**](https://gotellilab.github.io/Bio381/Scripts/Feb07/HandlingAndProcessingStringsInR.pdf) for a book-length treatment to manipulating strings in R
+* [**Mastering Regular Expressions**]() for a book-length deep introduction to regular expressions
