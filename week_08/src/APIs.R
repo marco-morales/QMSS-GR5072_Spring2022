@@ -120,7 +120,7 @@ install_github("mikeasilva/blsAPI")
 library(blsAPI) #update R to newest version and install "RCurl" package
 
 # supply series identifier to pull data (initial pull is in JSON data)
-layoffs_json <- blsAPI('MLUMS00NN0001003') 
+layoffs_json <- blsAPI("MLUMS00NN0001003") 
 
 class(layoffs_json) #JSON data in character format
 
@@ -157,8 +157,8 @@ my_API_key <- "<your-key-here>"
 
 # get a list of members of the Senate (116th Congress)
 senate_members <- list_members_chamber_congress(
-  116, 
-  "senate", 
+  congress = 116, 
+  chamber = "senate", 
   page = 1, 
   my_API_key)
 
