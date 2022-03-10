@@ -381,6 +381,11 @@ sort(set_8, decreasing = TRUE)
 sub(pattern = "\\$", "\\!", "I love R$")
 ## [1] "I love R!"
 
+# substitute $ with !
+sub(pattern = "\\w", "\\!", "I love R$")
+## [1] "I love R!"
+
+
 # substitute ^ with carrot
 sub(pattern = "\\^", "carrot", "My daughter has a ^ with almost every meal!")
 ## [1] "My daughter has a carrot with almost every meal!"
@@ -488,7 +493,7 @@ grep("^North$", state.division, value = TRUE)
 ##  character(0)  # no matched result
 
 #Find last value using $, ends with?
-grep(?Central$", state.division, value = TRUE)
+grep("?Central$", state.division, value = TRUE)
 ##  character(0)  # no matched results
 
 
