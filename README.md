@@ -47,7 +47,7 @@ outline\
 | -- week 12 : working with SQL
 | -- week 13 : working in the cloud
 | -- week 14 : distributed data processing
-| -- week 14 : tbd
+| -- week 15 : best practices
 ```
 
 ### Accessing course materials in this repo
