@@ -42,12 +42,12 @@ outline\
 | -- week  7 : Functions IV: strings and dates
 | -- week  8 : -- ACADEMIC HOLIDAY --
 | -- week  9 : working with APIs
-| -- week 10 : working with JSON & XML
-| -- week 11 : web scraping
-| -- week 12 : working with SQL
-| -- week 13 : working in the cloud
-| -- week 14 : distributed data processing
-| -- week 15 : best practices
+| -- week 10 : working with JSON & XML | web scraping
+| -- week 11 : working with SQL
+| -- week 12 : working in the cloud
+| -- week 13 : distributed data processing
+| -- week 14 : best practices
+| -- week 15 : final exam
 ```
 
 ### Accessing course materials in this repo
@@ -72,7 +72,7 @@ outline\
 	$ git pull origin main
 	```
 
-5. "Watch" the repository to get notifications each time uptates are pushed
+5. "Watch" the repository to get notifications each time updates are pushed
 
 
 
