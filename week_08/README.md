@@ -5,7 +5,7 @@
 1. **install** [`httr`](https://cran.r-project.org/web/packages/httr/index.html) package
 2. **read**
 	* [Using data.gov API in R](https://data.library.virginia.edu/using-data-gov-apis-in-r/)
-	* [Wenscraping with R using APIs](http://course1.winona.edu/thooks/Media/Handout%2027%20-%20Web%20scraping%20with%20R%20using%20APIs.pdf)
+	* [Web scraping with R using APIs](http://course1.winona.edu/thooks/Media/Handout%2027%20-%20Web%20scraping%20with%20R%20using%20APIs.pdf)
 
 
 #### Advanced topics (to explore on your own)
