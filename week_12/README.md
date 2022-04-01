@@ -1,4 +1,4 @@
-# Week 12: SQL (including in R)
+# Week 12: working with SQL
 
 ### Before class...
 
