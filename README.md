@@ -66,7 +66,7 @@ outline\
 	$ git clone https://github.com/marco-morales/QMSS-GR5072_Spring2022.git
 	```
 
-4. `pull` every week before class to sync your local copy with the lates changes pushed to the repo
+4. `pull` every week before class to sync your local copy with the latest changes pushed to the repo
 
 	```
 	$ git pull origin main
