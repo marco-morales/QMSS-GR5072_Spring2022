@@ -1,0 +1,255 @@
+
+---
+title: "R-starter-code"
+output:
+  html_document:
+    toc: true
+---
+
+
+# A soft introduction to data manipulation in Spark (using R)
+## GR5072 | Modern Data Structures
+
+```{r}
+%md
+This notebook is intended to give you a soft introduction to using R in a way that leverages capabilities available in Spark. It relies primaily in the use of the `sparklyr` and `sparkR` libraries to, respectively, perform `tidyverse`-like operations in Spark and send instructions directly to Spark.
+
+
+```
+
+You can interact with Spark (from Databricks):
+- using a notebook directly from Databricks (just like this notebook)
+- using RStudio as installed in a dedicated cluster (which we will not explore for this class, but know it is a possibility)
+#### Using a Databricks notebook with R 
+
+
+##### a) Creating a fresh notebook
+
+
+  1. To use a Databricks notebook with R, go to `Workspace > <you-user-name> > Create > Notebook`
+  2. Give your notebook a meaningful name and specify that **R** will be the default language for your notebook.
+  3. If available, attach the appropriate cluster to the notebook to start using it.  
+
+
+
+##### b) Cloning a shared notebook
+
+
+  1. To use an existing Databricks notebook with R, go to `Workspace > <you-user-name> > Clone`
+  2. If a notebook exists, ALWAYS default to cloning it, except if you're EXPLICITLY working on the same notebook with someone else.
+#### Load your packages
+
+- Load all your packages at the beginning of the notebook as a **best practice**. 
+- Make sure to load `SparkR`, `sparklyr` and `dplyr` to seamlessly interact with Spark using the `tidyverse` principles and syntax that you've learned throughout the course.
+
+##### A few things to keep in mind: 
+
+1. you may need to install some packages using the `install.packages()` functions, just as you would on your local machine. 
+2. packages installed from a notebook will not be preserved when the session is closed or the cluster is terminated, so you will need to install them each time.
+3. you will need to install and load ALL packages before creating the Spark connection, since packages are copied only once for the duration of the `spark_connect()` connection. If you need to load new packages, you must `spark_disconnect()`, modify the packages and then `spark_connect()` again.
+
+```{r}
+# load all required packages
+library(SparkR) # n.b. SparkR used to be loaded automatically, but need to load explicitly with Spark > 2.2.0
+library(sparklyr)
+library(dplyr)
+library(ggplot2)
+```
+
+#### Create a Spark connection
+
+R does not connect automatically to Spark; a connection needs to be created between the local node and Spark using the [`spark_connect()`](https://www.rdocumentation.org/packages/sparklyr/versions/0.2.26/topics/spark_connect) function. Note that the `method = "databricks"` parameter is necessary to use use Databricks notebooks.
+
+**REMEMBER:** load all your packages **before** creating the Spark connection.
+
+```{r}
+# create a sparklyr connection 
+sc <- spark_connect(method = "databricks")
+```
+
+## (1) Reading data
+
+
+There are many ways to read data into Spark -- we'll talk about them in class.
+
+For simplicity, we start with one dataset that is accessible from R itself: the `iris` dataset. Note that it is exactly the same dataset that you can access locally in R, and that - for the same reason - it exists natively as an R dataframe. To leverage the power of Spark, we'll need to convert it into a SparkDataFrame. 
+
+The [`sdf_copy_to()`](https://www.rdocumentation.org/packages/sparklyr/versions/1.7.5/topics/sdf_copy_to) function returns an R object wrapping the SparkDataFrame.
+
+```{r}
+head(iris)
+```
+
+
+```{r}
+# the iris object - native to R - is an R data.frame
+class(iris)
+```
+
+
+```{r}
+# convert the R data.frame to a SparkDataFrame ## what's the differences in between SparkDataFrame and 
+iris_tbl <- sdf_copy_to(sc = sc, x = iris, overwrite = TRUE)
+```
+
+
+```{r}
+# verify that the Spark dataframe exists in your Saprk workspace
+src_tbls(sc)
+```
+
+
+```{r}
+# the iris_tbl is now a SparkDataFrame with different attributes
+class(iris_tbl)
+```
+
+
+```{r}
+# check first rows of your SparkDataFrame as you would with an R data.frame
+head(iris_tbl)
+```
+
+## (2) transforming data 
+
+
+`sparklyr` enables the use of `dplyr` functions and piping (`%>%`) on SparkDataFrames. That means you can directly leverage your data transformation knowledge from the first weeks in the semester!
+
+```{r}
+# you can also combine with base R functions to get a count of columns 
+iris_tbl %>% ncol()
+```
+
+
+```{r}
+# you can also combine with base R functions to get a count of number of observations in the SparkDataFrame
+iris_tbl %>% count()
+```
+
+
+```{r}
+## more advaced manunipulation with dplyr and pipes
+iris_tbl %>% 
+  mutate(Sepal_Width = round(Sepal_Width * 2) / 2) %>% # Bucketizing Sepal_Width
+  group_by(Species, Sepal_Width) %>% 
+  summarize(
+    count = n(), 
+    Sepal_Mean_Length = mean(Sepal_Length),
+    stdev = sd(Sepal_Length, na.rm = TRUE),
+    .groups = "keep"
+  ) 
+```
+
+#### bring Spark outputs back into R
+
+After doing multiple data transformations (potentially in very large datasets) using Spark and `sparklyr`, you may want to bring the output from that process into R memory to perform other operations within R (such as data visualization using `ggplot2` or further analysis). To do that, you can use the `collect()` function which will executes the Spark process and return the results to R memory.
+
+```{r}
+# use collect() to bring Spark outputs to R memory
+iris_summary <- iris_tbl %>% 
+  mutate(Sepal_Width = round(Sepal_Width * 2) / 2) %>% # Bucketizing Sepal_Width
+  group_by(Species, Sepal_Width) %>% 
+  summarize(
+    count = n(), 
+    Sepal_Mean_Length = mean(Sepal_Length),
+    stdev = sd(Sepal_Length, na.rm = TRUE),
+    .groups = "keep"
+  )  %>% 
+collect()
+```
+
+
+```{r}
+# validate that it was converted back to an R dataframe 
+class(iris_summary)
+```
+
+
+```{r}
+# use ggplot
+ggplot(iris_summary, aes(Sepal_Width, Sepal_Mean_Length, color = Species)) + 
+  geom_line(size = 1.2) +
+  geom_errorbar(aes(ymin = Sepal_Mean_Length - stdev, ymax = Sepal_Mean_Length + stdev), width = 0.05) +
+  geom_text(aes(label = count), vjust = -0.2, hjust = 1.2, color = "black") +
+  theme(legend.position="top")
+
+
+```
+
+## (3) distributed computing for data transformation
+
+One advantage of using Spark is that it can partition large datasets across a cluster for efficient computation. This can be controlled with the `repartition` argument (which defaults to 0 to indicate no partition) in the `sdf_copy_to()` function. That means that, up to this point, we had not distrubuted the data across our cluster, which would be extremely slow and inefficient with much larger datasets.
+
+```{r}
+# create a new partitioned copy of the Iris dataset
+iris_tbl_part <- sdf_copy_to(sc, iris_tbl, repartition = 2, overwrite = TRUE)
+
+```
+
+
+```{r}
+# note the reduction in computation time for this operation from 1.24s with no partition
+# down to 1.06 with partitioned data
+
+iris_tbl_part %>% 
+  mutate(Sepal_Width = round(Sepal_Width * 2) / 2) %>% # Bucketizing Sepal_Width
+  group_by(Species, Sepal_Width) %>% 
+  summarize(
+    count = n(), 
+    Sepal_Mean_Length = mean(Sepal_Length),
+    stdev = sd(Sepal_Length, na.rm = TRUE),
+    .groups = "keep"
+  ) 
+```
+
+## (4) Using other R packages in Spark
+
+You can leverage [`spark_apply()`](https://www.rdocumentation.org/packages/sparklyr/versions/1.7.5/topics/spark_apply) - and related functions - to use any R package in Spark, provided that the package can perform operations in an R `data.frame`. This enables running arbitrary R code at scale within a Spark cluster, which is particularly useful when some functionality is only available in R or in R packages, and not readily available in Spark.
+
+```{r}
+# using spark_apply() to count the number of rows of data in each partition 
+spark_apply(
+  iris_tbl_part,
+  function(e) nrow(e), names = "n"
+  )
+```
+
+Note that `spark_apply()` takes a `group_by` argument which enables user-defined partitions that map to the data itself.
+
+In general, `spark_apply()` will run the R function on each partition - default or user-defined - and output a single SparkDataFrame.
+
+```{r}
+# using the broom package to run a linear regression and return an output table 
+# from a regression applied independently to each "Species" category in the data
+
+spark_apply(
+  iris_tbl,
+  function(e) broom::tidy(lm(Petal_Length ~ Petal_Width, e)),
+  names = c("term", "estimate", "std.error", "statistic", "p.value"),
+  group_by = "Species"
+  )
+```
+
+## (5) Using SQL from R in Spark
+
+You can direcly apply your SQL knowledge to query a SparkDataFrame using SQL statements within the [`sql()`](https://rdrr.io/cran/SparkR/man/sql.html) function in `SparkR`. Note that this query returns a SparkDataFrame.
+
+```{r}
+SQL_sample_query <- SparkR::sql("SELECT Petal_Length, Sepal_Length, Species FROM iris_tbl ORDER BY Species ASC")
+```
+
+
+```{r}
+head(SQL_sample_query)
+```
+
+## (6) when you are finished with your work...
+Remember
+- **close your Spark connection** with [`spark_disconnect()`](https://www.rdocumentation.org/packages/sparklyr/versions/0.2.28/topics/spark_disconnect)
+- **terminate your cluster** if you are the only person using it (it's costly to leave it running when no one is using it!)
+
+```{r}
+# close your Spark connection
+spark_disconnect(sc)
+```
+
