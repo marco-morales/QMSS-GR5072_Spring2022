@@ -45,8 +45,8 @@ outline\
 | -- week 10 : working with JSON & XML | web scraping
 | -- week 11 : best practices
 | -- week 12 : working with SQL
-| -- week 13 : working in the cloud
-| -- week 14 : distributed data processing
+| -- week 13 : distributed data processing in the cloud
+| -- week 14 : review session
 | -- week 15 : final exam
 ```
 
